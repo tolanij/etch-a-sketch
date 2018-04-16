@@ -11,6 +11,10 @@ var firstMessage=true;    // What the first message, to start on the first value
     ctx.setup = function() { console.log( 'setup' );} // Setup all variables
     ctx.keydown= function() { if ( ctx.keys.C ) ctx.clear();} // handeling keydowns
 
+    function changeColor(newColor){
+      COLOUR = newColor;
+    }
+
     socket.on('reset', function() { // on a 'reset' message clean and reste firstMessage
       firstMessage=true;
       ctx.clear();
